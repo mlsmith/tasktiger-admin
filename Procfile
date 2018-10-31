@@ -1,1 +1,1 @@
-web: tasktiger-admin --host $REDIS_HOST --port $REDIS_PORT --password $REDIS_PASSWORD --listen $PORT
+web: tasktiger-admin --host $REDIS_HOST --port $REDIS_PORT --password $REDIS_PASSWORD --listen 80
