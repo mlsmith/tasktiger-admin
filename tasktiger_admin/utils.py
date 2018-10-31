@@ -12,7 +12,7 @@ from tasktiger_admin import TaskTigerView
 @click.option('-n', '--db', help='Redis database number')
 @click.option('-l', '--listen', help='Admin port to listen on')
 def run_admin(host, port, db, password, listen):
-    conn = redis.Redis(host, int(port or 6379), int(db or 0), password)
+    conn = redis.Redis(host=host, port=int(port or 6379), db=int(db or 0), password=password, decode_responses=True)
     tiger = TaskTiger(setup_structlog=True, connection=conn)
     app = Flask(__name__)
     admin = Admin(app, url='/')
